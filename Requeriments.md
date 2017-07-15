@@ -2,34 +2,31 @@
 
 ## 1. Características Generales del Proyecto
 
-+ 50x50 celdas de 10px cada una.
-+ Añadir/Eliminar células.
-+ Configuración de colores (hasta 8 colores).
-+ Generación finita e infinita de pasos.
-+ Control de pasos (100 mil pasos).
-+ Control de tiempo (hasta 5 segundos por paso).
-+ Control de reproducción (pausa/iniciar/detener/reiniciar).
-+ Exportar generación en pausa (en formato JSON).
++ Tabla de registro de estudiantes (hasta 8 estudiantes).
++ CRUD completo de datos de los estudiantes.
++ Registro y modificación de notas (4 por estudiante).
++ Posibilidad de ordenar alfabéticamente los datos.
++ Persistencia (LocalStorage).
++ Cálculo automático del promedio de notas equivalente.
++ Colores alusivos al estatus de un estudiante.
++ Validación completa de los campos de registro.
 
 ## 2. Historias de usuario.
 
-+ [ ] Como usuario, quiero ver una grilla cuadrada de 50 celdas de longitud, donde cada celda sea cuadrada de 10 píxeles de longitud.
-+ [ ] Como usuario, quiero indicar las células(celdas) que estarán vivas en la generación inicial, haciendo click sobre cualquier celda. Una vez para indicar que está viva y otra vez para indicar que está muerta
-+ [ ] Como usuario, quiero señalar las células que estarán vivas con un color y las que estarán muertas con otro color distinto, personalizable (entre un máximo de 8 colores precargados). Las celdas vacías, siempre estarán marcadas de color blanco
-+ [ ] Como usuario, quiero ver un grupo de botones con acciones correspondientes al control de reproducción de las células, es decir:
-  + Un botón de iniciar, que comience la reproducción celular en el estado en que se encuentre la grilla.
-  + Un botón de pausar, que detiene temporalmente la reproducción celular, pero al volver a hacer click en dicho botón debe empezar nuevamente la reproducción desde el estado anterior
-  + Un botón de detener, que detiene la reproducción, pero no debe permitir volver al estado anterior.
-  + Un botón de reiniciar, que limpia toda la grilla.
-+ [ ] Como usuario, quiero configurar el tiempo que transcurre entre generación y generación (desde 300ms hasta 5000ms).
-+ [ ] Como usuario, quiero tener un control de generaciones celulares, por lo que debe permitir decidir si se quiere generación finita (desde 100 hasta 100 mil generaciones) o infinita (hasta que la grilla esté **estable**).
-+ [ ] Como usuario, quiero que incluso al iniciar la reproducción, me permita incluir nuevas células a la grilla.
-+ [ ] Como usuario, quiero que al pausar la reproducción, no permita el ingreso de nuevas células, tampoco al detener la reproducción.
-+ [ ] Como usuario, quiero que, por cualquiera de las posibles causas que pudieran presentarse, el juego emita una notificación indicando que la generación es **estable**, esto es, si no existen más reproducciones posibles.
-+ [ ] Como usuario, quiero que el juego mantenga las normas del juego de la vida original de John Conway, las cuales son:
-  + La vecindad entre células se cuenta por lados (arriba, izquierda, abajo y derecha) y por vértices (esquinas, superior e inferior derecha e izquierda correlativamente).
-  + Si una célula tiene menos de 2 vecinos vivos, muere por soledad en la próxima generación.
-  + Si una célula tiene más de 3 vecinos vivos, muere por sobrepoblación en la próxima generación.
-  + Si una célula tiene exactamente 2 ó 3 vecinos vivos pueden ocurrir dos casos:
-    + Si la célula está viva, se mantiene con vida en la próxima generación.
-    + Si la célula está muerta, revive en la próxima generación.
++ [ ] Como usuario, quiero ver una tabla donde se liste la información de los estudiantes regstrados en una sección (hasta 8 estudiantes).
++ [ ] Como usuario, quiero registrar los siguientes datos por estudiante:
+  + Apellido, Nombre
+  + Cédula de Identidad
+  + Correo Electrónico
+  + Estatus (Reprobado, Aprobado, Cursando)
++ [ ] Como usuario, quiero poder registrar hasta 4 notas numéricas correspondientes a los cortes (de 25%) de la nota de cada estudiante.
++ [ ] Como usuario, quiero poder ordenar alfabéticamente todos los estudiantes por apellido y nombre.
++ [ ] Como usuario, quiero ver las notas de un estudiante en una ventana modal aparte, correspondientes a sus cortes. Estas notas podrán ser modificadas una vez registradas, pero no pueden ser eliminadas a menos que se elimine al estudiante del registro. La nota mínima es 0 y la máxima es 25.
++ [ ] Como usuario, quiero ver la nota calculada en base a 20 puntos por el propio registro, haciendo la conversión respectiva (1 corte de 25% = 5 puntos).
++ [ ] Como usuario, quiero buscar por apellido o nombre o cédula de identidad a un estudiante en particular.
++ [ ] Como usuario, quiero poder eliminar estudiantes del registro, con sus respectivas notas del almacén.
++ [ ] Como usuario, quiero ver que un estudiante pueda tener 3 estatus durante el registro:
+  + "Cursando", estatus por defecto y se asigna a un estudiante que no tiene al menos un corte de notas registrado (color azul).
+  + "Aprobado", estatus que se le asigna a un estudiante cuando todas sus notas han sido registradas y el cálculo promedio resulta mayor a 10 puntos (color verde).
+  + "Reprobado", estatus que se le asigna a un estudiante cuando todas sun notas han sido registradas y el cálculo promedio resulta menor a 10 puntos (color rojo).
++ [ ] Como usuario, quiero que el registro notifique adecuadamente los mensajes respectivos a las respuestas devueltas por el sistema.
